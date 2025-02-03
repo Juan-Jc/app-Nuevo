@@ -12,7 +12,9 @@ class MainController extends AbstractController
     #[Route('/')]
     public function home():Response{
         $juan = new Usuario('juan','puerta','ospina','juan@admin.com',999999999,'1234');
-        return $this->render('plantillas/home.html.twig', ['nombre'=> $juan->getNombre(),
-    ]);
+        return $this->render('plantillas/home.html.twig', 
+        ['nombre'=> $juan->getNombre(),
+        'apellido1'=> $juan->getApellido1(),
+        'apellido2'=>$juan->getApellido2()]);
     }
 }
